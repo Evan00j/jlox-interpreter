@@ -1,4 +1,4 @@
-package lox;
+package org.example;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Lox {
 	static boolean hadError = false;
+
 
 	public static void main(String[] args) throws IOException {
 		if (args.length > 1) {
@@ -47,12 +48,13 @@ public class Lox {
 	}
 
 	private static void run(String source) {
+		
 		Scanner scanner = new Scanner(source);
-		List<Token> tokens = scanner.scanTokens();
-
+		List<Token> tokens = scanner.scanTokens(); 
 		for (Token token : tokens) {
-			System.out.println(token);
+		System.out.println(token);
 		}
+		 
 	}
 
 	static void error(int line, String message) {
